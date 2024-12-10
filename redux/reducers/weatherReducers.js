@@ -2,9 +2,9 @@ import { FETCH_WEATHER,FETCH_AUTOSUGGEST, FETCH_FORECAST, SET_ERROR } from '../a
 
 const initialState = {
     currentWeather: null,
-    autosuggest: null,
     forecast: null,
     error: null,
+    autosuggest: [],
 };
 
 export default function weatherReducer(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function weatherReducer(state = initialState, action) {
         case FETCH_WEATHER:
             return { ...state, currentWeather: action.payload, error: null };
         case FETCH_AUTOSUGGEST:
-             return { ...state, autosuggest: action.payload, error: null}
+             return { ...state, autosuggest: action.payload, error: null};
         case FETCH_FORECAST:
             return { ...state, forecast: action.payload, error: null };
         case SET_ERROR:

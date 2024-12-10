@@ -9,7 +9,7 @@ export const SET_ERROR = 'SET_ERROR';
 export const fetchWeather = (city) => async (dispatch) => {
     try {
         const response = await axios.get(
-            `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
+            `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`
         );
         dispatch({ type: FETCH_WEATHER, payload: response.data });
     } catch (error) {
